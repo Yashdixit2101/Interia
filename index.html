@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="common-style.css">
     <link rel="stylesheet" href="home-style.css">
     <link rel="shortcut icon" href="source/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <script src="home-code.js"></script>
@@ -18,13 +19,18 @@
     <div class="banner">
         <div class="navbar">
             <img onclick="btn('index.html');" src="source/logo.png" class="logo">
-            <ul>
+
+            <ul id="menu-list">
                 <li><a href="book.html">Get Quote</a></li>
-                <li><a  href="corona.html">covid-19</a></li>
-                <li><a href="design.html">Design ideas</a></li>
+                <li><a href="corona.html">Covid-19</a></li>
+                <li><a href="design.html">Design Ideas</a></li>
                 <li><a href="how.html">How It Works?</a></li>
                 <li><a href="visit.html">Visit Us</a></li>
             </ul>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
 
         <div class="content">
@@ -32,17 +38,25 @@
             <p>Whether it's a magazine-like dream kitchen or your entire home, enjoy end-to-end solutions from design to installation.</p>
             <div>
                 <button onclick="btn('book.html');">
-                    <i class="fa fa-phone"></i>  CALL NOW
+                    <i class="fa fa-phone" style="rotate: 90deg;"></i> CALL NOW
                 </button>
-                
                 <button onclick="btn('https://wa.me/919027930432');">
-                    <i class="fab fa-whatsapp"></i>  WHATSAPP
+                    <i class="fab fa-whatsapp"></i> WHATSAPP
                 </button>
             </div>
         </div>
-
-
     </div>
+
+    <script>
+        function btn(link) {
+            window.location.href = link;
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("menu-list");
+            menu.classList.toggle("active");
+        }
+    </script>
 
     <div class="up" onclick="totop();">
         <i class="fas fa-arrow-up"></i>

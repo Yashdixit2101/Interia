@@ -1,110 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    font-family: Poppins;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
-.banner{
+
+body {
+    background: #f3f3f3;
+}
+
+/* Banner Section */
+.banner {
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: url('source/banner.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
 }
-.navbar{
+
+/* Navbar */
+.navbar {
     width: 100%;
-    margin: auto;
-    padding: 3px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.7);
 }
-.logo{
-    margin: 20px 0;
-    width: 180px;
+
+.logo {
+    width: 150px;
     cursor: pointer;
 }
-.navbar ul li{
+
+.navbar ul {
+    display: flex;
     list-style: none;
-    display: inline-block;
-    margin: 20px 20px;
-    position: relative;
 }
-.navbar ul li a{
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
     text-decoration: none;
     color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #eb595f;
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.menu-toggle {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Content Section */
+.content {
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 50px;
+    font-weight: 600;
     text-transform: uppercase;
 }
-.navbar ul li::after{
-    content: "";
-    height: 3px;
-    width: 0;
-    background: #eb595f;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
+
+.content p {
+    font-size: 18px;
+    margin: 20px 0;
+    line-height: 1.5;
 }
-.navbar ul li:hover::after{
-    width: 100%;
-}
-.content{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    color: white;
-}
-.content h1{
-    font-size: 70px;
-}
-.content p{
-    margin: 20px auto;
-    font-weight: 100;
-    line-height: 25px;
-    font-size: 20px;
-    width: 45%;
-}
-.content button{
+
+.content button {
     font-size: 17px;
-    width: 200px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
+    width: 180px;
+    padding: 12px 0;
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid #eb595f;
     background: blueviolet;
     color: white;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    margin: 10px;
+    transition: 0.3s ease-in-out;
+    
 }
+
 .content button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight zoom effect */
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .content button:nth-child(2):hover {
-    background-color: #1DA851; /* Darker green for WhatsApp */
+    background-color: #1DA851;
 }
-.content span{
-    background: #eb595f;
-    width: 0;
-    height: 100%;
-    border-radius: 25px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    transition: 0.5s;
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        display: none;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .content h1 {
+        font-size: 35px;
+    }
+
+    .content p {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    .content button {
+        width: 150px;
+        padding: 10px 0;
+    }
 }
-button:hover span{
-    width: 100%;
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .content button {
+        width: 140px;
+        padding: 8px 0;
+    }
 }
 ::-webkit-scrollbar{
     width: 8px;    

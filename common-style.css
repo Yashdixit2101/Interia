@@ -78,11 +78,19 @@
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid #eb595f;
-    background: transparent;
+    background: blueviolet;
     color: white;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+}
+.content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.content button:nth-child(2):hover {
+    background-color: #1DA851; /* Darker green for WhatsApp */
 }
 .content span{
     background: #eb595f;
@@ -266,3 +274,123 @@ body{
     left: 20px;
     color: #eb595f;
 }
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 101px;
+    right: 21px;
+    z-index: 1000;
+    background-color: #25D366;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float img {
+    width: 50px;
+    height: 50px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 600px) {
+    .whatsapp-float {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+    }
+}
+.m4 {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.t4 h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* FLEXBOX LAYOUT */
+.custom-flex {
+    display: flex;
+    justify-content: space-between; /* Evenly space items */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 20px; /* Space between items */
+}
+
+/* CUSTOM BOX STYLE */
+.custom-box {
+    flex: 1;
+    max-width: 30%; /* Three items per row on large screens */
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* HOVER EFFECT */
+.custom-box:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGE STYLING */
+.custom-box img {
+    width: 100%;
+    max-width: 400px; /* Limit max size */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.custom-box img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.custom-box p {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* 🌟 TABLET VIEW: Show Two Items Per Row */
+@media (max-width: 992px) {
+    .custom-box {
+        max-width: 45%; /* Two items per row */
+    }
+}
+
+/* 🌟 MOBILE VIEW: Show Only One Image Per Row, Centered */
+@media (max-width: 768px) {
+    .custom-flex {
+        flex-direction: column; /* Stack items */
+        align-items: center; /* Center align */
+    }
+    .custom-box {
+        max-width: 100%; /* Full width */
+    }
+}
+

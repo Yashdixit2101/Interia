@@ -40,15 +40,24 @@
             <p>Whether it's a magazine-like dream kitchen or your entire home, enjoy end-to-end solutions from design to
                 installation.</p>
             <div>
-                <button onclick="btn('book.html');">
+                <button onclick="callNow()">
                     <i class="fa fa-phone" style="rotate: 90deg;"></i> CALL NOW
                 </button>
-                <button onclick="btn('https://wa.me/919027930432');">
+                <button onclick="whatsappChat()">
                     <i class="fab fa-whatsapp"></i> WHATSAPP
                 </button>
             </div>
         </div>
     </div>
+    <script>
+        function callNow() {
+            window.location.href = "tel:+918875291028"; // Opens dialer with the number
+        }
+    
+        function whatsappChat() {
+            window.location.href = "https://wa.me/918875291028&text=Hey There! I am interested in interior designs on website. Can I know more on this?"; // Opens WhatsApp chat
+        }
+    </script>
 
     <script>
         function btn(link) {

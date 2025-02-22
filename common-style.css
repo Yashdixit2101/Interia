@@ -638,10 +638,12 @@ body{
 }
 
 #img-bk {
-    width: 65px;
-    height: 5px;
-    background-color: #333;
-    margin: 10px auto;
+    width: 380px;
+    height: 80px; /* Adjust height as needed */
+    background: url('source/your-image.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
 }
 
 /* Text Section */
